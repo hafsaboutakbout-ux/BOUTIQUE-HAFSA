@@ -1,0 +1,370 @@
+/* Style général */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff9fb;
+    color: #333;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* En-tête */
+header {
+    background-color: white;
+    padding: 20px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    box-shadow: 0 2px 10px #00000012;
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: bold;
+    color: #333;
+}
+
+.logo span {
+    color: #d65b8c;
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #d65b8c;
+}
+
+button, .btn {
+    cursor: pointer;
+    border: none;
+    font-family: inherit;
+}
+
+.panier-btn, .btn {
+    background-color: #d65b8c;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+.panier-btn:hover, .btn:hover {
+    background-color: #b83f70;
+}
+
+/* Accueil */
+.accueil {
+    text-align: center;
+    padding: 85px 20px;
+    background: linear-gradient(120deg, #ffe1ec, #fff5f8);
+}
+
+.accueil h1 {
+    font-size: 38px;
+    color: #a83265;
+    margin-bottom: 20px;
+}
+
+.accueil p {
+    font-size: 17px;
+    margin-bottom: 30px;
+}
+
+/* Produits */
+main {
+    padding: 50px 7%;
+}
+
+main h2, .apropos h2 {
+    text-align: center;
+    color: #a83265;
+    font-size: 30px;
+}
+
+.sous-titre {
+    text-align: center;
+    margin: 12px 0 30px;
+    color: #777;
+}
+
+/* Filtres */
+.filtres {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.filtres input, .filtres select {
+    padding: 13px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 15px;
+    background: white;
+}
+
+.filtres input {
+    flex: 2;
+    min-width: 200px;
+}
+
+.filtres select {
+    flex: 1;
+    min-width: 160px;
+}
+
+/* Statistiques */
+.statistiques {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 35px;
+}
+
+.statistiques div {
+    background: white;
+    text-align: center;
+    padding: 23px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px #0000000c;
+}
+
+.statistiques h3 {
+    font-size: 26px;
+    color: #d65b8c;
+    margin-bottom: 8px;
+}
+
+/* Cartes produits */
+.liste-produits {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.produit {
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px #00000012;
+    transition: transform 0.3s;
+}
+
+.produit:hover {
+    transform: translateY(-5px);
+}
+
+.produit img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.produit-info {
+    padding: 18px;
+}
+
+.produit-info h3 {
+    margin-bottom: 10px;
+    font-size: 19px;
+}
+
+.categorie {
+    color: #888;
+    margin-bottom: 10px;
+}
+
+.prix {
+    color: #d65b8c;
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+.disponible {
+    color: #23864a;
+    margin-bottom: 15px;
+}
+
+.indisponible {
+    color: #c0392b;
+    margin-bottom: 15px;
+}
+
+.actions {
+    display: flex;
+    gap: 8px;
+}
+
+.actions button {
+    padding: 11px;
+    border-radius: 6px;
+    flex: 1;
+}
+
+.voir {
+    background-color: #fce2eb;
+    color: #a83265;
+}
+
+.ajouter {
+    background-color: #d65b8c;
+    color: white;
+}
+
+.ajouter:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+/* À propos */
+.apropos {
+    background-color: #ffe9f1;
+    padding: 55px 15%;
+    text-align: center;
+}
+
+.apropos p {
+    margin-top: 20px;
+    line-height: 1.8;
+}
+
+/* Fenêtres */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: #00000099;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    z-index: 10;
+}
+
+.modal-contenu {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 480px;
+    max-height: 85vh;
+    overflow-y: auto;
+    position: relative;
+}
+
+.modal-contenu img {
+    width: 100%;
+    max-height: 260px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+.modal-contenu h2 {
+    margin-bottom: 15px;
+    color: #a83265;
+}
+
+.modal-contenu p {
+    margin: 10px 0;
+}
+
+.fermer {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    background: none;
+    font-size: 28px;
+    color: #555;
+}
+
+.ligne-panier {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+    gap: 10px;
+}
+
+.ligne-panier button {
+    padding: 5px 10px;
+    background: #fce2eb;
+    color: #a83265;
+    border-radius: 5px;
+}
+
+#totalPanier {
+    margin-top: 20px;
+    color: #a83265;
+}
+
+/* Pied de page */
+footer {
+    background: #333;
+    text-align: center;
+    color: white;
+    padding: 25px;
+}
+
+footer p {
+    margin: 6px 0;
+}
+
+/* Tablette */
+@media (max-width: 1000px) {
+    .liste-produits {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+    header {
+        justify-content: center;
+    }
+
+    .accueil h1 {
+        font-size: 28px;
+    }
+
+    .liste-produits {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .statistiques {
+        grid-template-columns: 1fr;
+    }
+
+    .produit img {
+        height: 160px;
+    }
+
+    .actions {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 400px) {
+    .liste-produits {
+        grid-template-columns: 1fr;
+    }
+}

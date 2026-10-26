@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boutique Hafsa</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+
+    <!-- En-tête -->
+    <header>
+        <div class="logo">Boutique <span>Hafsa</span></div>
+
+        <nav>
+            <a href="#accueil">Accueil</a>
+            <a href="#produits">Produits</a>
+            <a href="#apropos">À propos</a>
+        </nav>
+
+        <button class="panier-btn" id="boutonPanier">
+            🛍️ Panier (<span id="nombrePanier">0</span>)
+        </button>
+    </header>
+
+    <!-- Accueil -->
+    <section class="accueil" id="accueil">
+        <h1>Bienvenue chez Boutique Hafsa</h1>
+        <p>Découvrez nos produits de mode, beauté, maison et électronique.</p>
+        <a href="#produits" class="btn">Découvrir nos produits</a>
+    </section>
+
+    <!-- Catalogue -->
+    <main id="produits">
+        <h2>Nos produits</h2>
+        <p class="sous-titre">Trouvez votre bonheur parmi notre sélection.</p>
+
+        <!-- Recherche et filtres -->
+        <div class="filtres">
+            <input
+                type="text"
+                id="recherche"
+                placeholder="Rechercher un produit..."
+            >
+
+            <select id="categorie">
+                <option value="Toutes">Toutes les catégories</option>
+                <option value="Mode">Mode</option>
+                <option value="Beauté">Beauté</option>
+                <option value="Maison">Maison</option>
+                <option value="Électronique">Électronique</option>
+            </select>
+
+            <select id="tri">
+                <option value="normal">Trier par</option>
+                <option value="croissant">Prix croissant</option>
+                <option value="decroissant">Prix décroissant</option>
+            </select>
+        </div>
+
+        <!-- Statistiques -->
+        <div class="statistiques">
+            <div>
+                <h3 id="totalProduits">0</h3>
+                <p>Produits affichés</p>
+            </div>
+
+            <div>
+                <h3 id="produitsDisponibles">0</h3>
+                <p>Produits disponibles</p>
+            </div>
+
+            <div>
+                <h3 id="prixMoyen">0 DH</h3>
+                <p>Prix moyen</p>
+            </div>
+        </div>
+
+        <!-- Les produits seront ajoutés par JavaScript -->
+        <div class="liste-produits" id="listeProduits"></div>
+    </main>
+
+    <!-- À propos -->
+    <section class="apropos" id="apropos">
+        <h2>À propos de Boutique Hafsa</h2>
+        <p>
+            Boutique Hafsa est une boutique en ligne qui propose
+            des produits de mode, de beauté, de maison et
+            d'électronique à des prix accessibles.
+        </p>
+    </section>
+
+    <!-- Fenêtre pour les détails -->
+    <div class="modal" id="modal">
+        <div class="modal-contenu">
+            <button class="fermer" id="fermerModal">&times;</button>
+            <div id="detailsProduit"></div>
+        </div>
+    </div>
+
+    <!-- Panier -->
+    <div class="modal" id="modalPanier">
+        <div class="modal-contenu">
+            <button class="fermer" id="fermerPanier">&times;</button>
+            <h2>Mon panier</h2>
+            <div id="contenuPanier"></div>
+            <h3 id="totalPanier">Total : 0 DH</h3>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 Boutique Hafsa - Tous droits réservés</p>
+        <p>Projet TP5 - Développement Web</p>
+    </footer>
+
+</body>
+</html>
