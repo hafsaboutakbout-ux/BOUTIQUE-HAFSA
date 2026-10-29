@@ -158,13 +158,21 @@ function afficherProduits(liste) {
 }
 
 // Recherche, catégorie et tri
+// Préparer un texte pour une recherche sans accents.
+function normaliserTexte(texte) {
+    return texte
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .trim();
+}
 function filtrerProduits() {
-    const texte = recherche.value.toLowerCase().trim();
+    const texte = normaliserTexte(recherche.value);
     const choixCategorie = categorie.value;
     const choixTri = tri.value;
 
     let resultat = produits.filter(function(produit) {
-        const correspondNom = produit.nom.toLowerCase().includes(texte);
+        const correspondNom = normaliserTexte(produit.nom).includes(texte);
 
         const correspondCategorie =
             choixCategorie === "Toutes" ||
