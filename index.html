@@ -26,7 +26,7 @@
 
     <!-- Accueil -->
     <section class="accueil" id="accueil">
-        <h1>Bienvenue chez Boutique Hafsa</h1>
+<h1>Bienvenue chez Boutique Hafsa - Découvrez nos nouveautés</h1>
         <p>Découvrez nos produits de mode, beauté, maison et électronique.</p>
         <a href="#produits" class="btn">Découvrir nos produits</a>
     </section>
@@ -43,7 +43,13 @@
                 id="recherche"
                 placeholder="Rechercher un produit..."
             >
-
+        <!-- Filtrer les produits disponibles -->
+<div class="filtre-disponible">
+    <label for="disponiblesSeulement">
+        <input type="checkbox" id="disponiblesSeulement">
+        Produits disponibles uniquement
+    </label>
+</div>
             <select id="categorie">
                 <option value="Toutes">Toutes les catégories</option>
                 <option value="Mode">Mode</option>
