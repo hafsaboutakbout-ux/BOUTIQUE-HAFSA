@@ -22,7 +22,7 @@ const produits = [
         categorie: "Mode",
         prix: 400,
         image: "images/montre.jpg",
-        disponible: true
+        disponible: false
     },
     {
         id: 4,
@@ -30,7 +30,8 @@ const produits = [
         categorie: "Mode",
         prix: 180,
         image: "images/collier perle.jpg",
-        disponible: true
+        disponible: false
+        
     },
     {
         id: 5,
@@ -45,7 +46,7 @@ const produits = [
         nom: "Parfum",
         categorie: "Beauté",
         prix: 300,
-        image: "images/parfum.jpg",
+        image: "images/parfun.jpg",
         disponible: true
     },
     {
@@ -106,6 +107,8 @@ const listeProduits = document.getElementById("listeProduits");
 const recherche = document.getElementById("recherche");
 const categorie = document.getElementById("categorie");
 const tri = document.getElementById("tri");
+const disponiblesSeulement =
+    document.getElementById("disponiblesSeulement");
 
 const modal = document.getElementById("modal");
 const modalPanier = document.getElementById("modalPanier");
@@ -167,7 +170,12 @@ function filtrerProduits() {
             choixCategorie === "Toutes" ||
             produit.categorie === choixCategorie;
 
-        return correspondNom && correspondCategorie;
+        const correspondDisponibilite =
+    !disponiblesSeulement.checked || produit.disponible;
+
+return correspondNom &&
+       correspondCategorie &&
+       correspondDisponibilite;
     });
 
     if (choixTri === "croissant") {
@@ -295,7 +303,10 @@ function retirerPanier(index) {
 recherche.addEventListener("input", filtrerProduits);
 categorie.addEventListener("change", filtrerProduits);
 tri.addEventListener("change", filtrerProduits);
-
+disponiblesSeulement.addEventListener(
+    "change",
+    filtrerProduits
+);
 document.getElementById("fermerModal").addEventListener("click", function() {
     modal.style.display = "none";
 });
